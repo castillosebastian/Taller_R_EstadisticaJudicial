@@ -1,0 +1,103 @@
+R para Estadística Judicial: Reproducibilidad y Automatización 
+========================================================
+width: 1920
+height: 1080
+author: Lic. Sebastián Castillo 
+date: 19-10-2021
+autosize: true
+
+APGE - Problema
+========================================================
+
+Estadística-1982/2016: 30 años ¿problema resuelto?
+![](papel_lapiz.jpg)
+
+*"los muertos que vos matáis gozan de buena salud"*
+
+APGE - Nuevo Modelo
+========================================================
+
+**max(d → c) & min(d → !c)**
+
+Si hay *dato* debe haber *computabilidad*. 
+
+-------
+
+*[Reproducibilidad](https://cure.web.unc.edu/defining-reproducibility/)*: la capacidad de un cálculo para ser replicado por terceros operando de forma independiente.   
+
+*Automatización*: 
+
+
+
+
+APGE - Productos/Servicios
+========================================================
+
+<div align="center">
+<img src="APGE-productos_servicios.png" width=1300 height=1000, center>
+</div>
+
+APGE Sistema de Estadística Pública Judicial del STJER
+========================================================
+
+<img src="JUSTAT_tecnologías.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
+
++ [INDEC](https://www.indec.gob.ar/).
++ [EUROSTAT](https://ec.europa.eu/eurostat), 2016: Aplicación Modelo Genérico Proc. Estadísticos
++ [R, Official Statistics](https://cran.r-project.org/web/views/OfficialStatistics.html), 2013 +: Publicaciones y Herramientas 
++ [GREP-JUFEJUS Argentina](http://www.jufejus.org.ar/index.php/2013-04-29-21-18-54/estadisticas), 2010 +: Código de Buenas Prácticas de las Estadísticas Judiciales
+
+APGE JUSTAT: arquitectura
+========================================================
+
+Aplicaciones:
+
++ [Tableros](https://justat.jusentrerios.gov.ar/presentaciones/)  
++ [Presentaciones](https://tablero.jusentrerios.gov.ar/)   
+
+Librerías: 
+
++ [Operaciones](https://bitbucket.org/apgye/apgyeoperationsjuser/)
++ [Procesamiento](https://bitbucket.org/apgye/apgyeprocesamiento/)
++ [Organización_Institucional](https://bitbucket.org/apgye/apgyejuserorganization/)
++ [Informes](https://bitbucket.org/apgye/apgyeinformes/)
+
+
+Modelo típico de un "análisis de datos"
+========================================================
+
+<div>
+<img src="data-science.png" width=1520 height=900>
+</div>
+
+["R for Data Science"](https://r4ds.had.co.nz/introduction.html), Wickham-Grolemund.
+
+
+Bibliografia
+========================================================
+
++ [An Introduction to R -Douglas et all, 2021](https://intro2r.com/)   
++ [R for Data Science](https://r4ds.had.co.nz/introduction.html)   
+
+
+
+APGE - Próximo Pasos:  
+========================================================
+
++ Análisis Automático de Sentencias
+
+poner...... ejemplo anotacion
+
+APGE - Agradecimientos
+========================================================
+Equipo:   
++ Emilce Leones (operador)
++ Marcos Londero (técnico)
++ Sebastián Castillo (director)
+
+Gracias
+Área de Planificación Gestión y Estadística    
+Superior Tribunal de Justicia de Entre Ríos    
+0343-4209405/410 – ints. 396 y 305    
++ apge@jusentrerios.gov.ar  
++ estadistica@jusentrerios.gov.ar   
