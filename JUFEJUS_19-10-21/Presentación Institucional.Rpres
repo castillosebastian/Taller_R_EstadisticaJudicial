@@ -6,6 +6,53 @@ author: Lic. Sebastián Castillo
 date: 19-10-2021
 autosize: true
 
+Presentación
+========================================================
+
++ **Primera Parte**: Introducción   
++ **Segunda Parte**: Trabajo en RMarkdown   
++ **Objetivo:** Completar la elaboración de un informe automatizado y reproducible de estadística judicial.     
++ **materiales_disponibles**: https://github.com/castillosebastian/Taller_R_EstadisticaJudicial.git     
+
+
+APGE - Desafío
+========================================================
+
+```{r, echo=FALSE, fig.align='center'}
+source("../dependencias.R")
+apgyeJusEROrganization::listar_organismos() %>% 
+  mutate(instancia = case_when(
+    str_detect(tipo, "jdo|oga|tja|cen") ~ "primera_instancia", 
+    str_detect(tipo, "cam") ~ "segunda_instancia", 
+    str_detect(tipo, "stj|sal") ~ "superior_instancia", 
+    TRUE ~ "sd"), 
+    materia = case_when(
+      str_detect(materia, "cco") ~ "civil_com", 
+      str_detect(materia, "cqb|eje" ) ~ "ejecuciones_conc-qui", 
+      str_detect(materia, "cad") ~ "contencioso_adm", 
+      str_detect(materia, "fam") ~ "familia", 
+      str_detect(materia, "lab") ~ "laboral", 
+      str_detect(materia, "paz") ~ "paz", 
+      str_detect(materia, "pen|pep") ~ "penal", 
+      str_detect(materia, "pco") ~ "constitucional(apelacion)",
+      TRUE ~ "sd")) %>% 
+  filter(instancia != "sd", materia != "sd") %>% 
+  group_by(instancia, materia) %>% 
+  summarize(cantidad_organos = n()) %>% 
+  janitor::adorn_totals("row") %>% 
+  kable(caption = "Estructura Judicial")
+```
+-------
+
+**Estadística Descriptiva**
+
+- datos_primarios_xmes = 198 * 4 ≈ 792 (ci,carch,resol,audic,mov)
+- procesos = relevamiento, procesesamiento, análisis y producción
+
+**Análisis de Datos**
+- datos_primarios: x 
+- procesos = necesidad, [diseño-construccion relevamiento], procesamiento, análisis e informe
+
 APGE - Problema
 ========================================================
 
@@ -14,21 +61,16 @@ Estadística-1982/2016: 30 años ¿problema resuelto?
 
 *"los muertos que vos matáis gozan de buena salud"*
 
-APGE - Nuevo Modelo
+APGE - Una idea simple
 ========================================================
 
-**max(d → c) & min(d → !c)**
-
-Si hay *dato* debe haber *computabilidad*. 
+Donde hay **dato** debe haber **algoritmo**. 
 
 -------
 
-*[Reproducibilidad](https://cure.web.unc.edu/defining-reproducibility/)*: la capacidad de un cálculo para ser replicado por terceros operando de forma independiente.   
+**[Reproducibilidad](https://cure.web.unc.edu/defining-reproducibility/)**: la capacidad de un cálculo para ser replicado por terceros operando de forma independiente.   
 
-*Automatización*: 
-
-
-
+**Automatización**: introducción de agentes (ie. algoritmos) autónomos en situaciones que requieren operaciones recurrentes.    
 
 APGE - Productos/Servicios
 ========================================================
@@ -49,7 +91,7 @@ knitr::include_graphics('JUSTAT_tecnologías.png')
 + [R, Official Statistics](https://cran.r-project.org/web/views/OfficialStatistics.html), 2013 +: Publicaciones y Herramientas 
 + [GREP-JUFEJUS Argentina](http://www.jufejus.org.ar/index.php/2013-04-29-21-18-54/estadisticas), 2010 +: Código de Buenas Prácticas de las Estadísticas Judiciales
 
-APGE JUSTAT: arquitectura
+APGE JUSTAT: arquitectura (pública)
 ========================================================
 
 Aplicaciones:
@@ -80,15 +122,6 @@ Bibliografia
 
 + [An Introduction to R -Douglas et all, 2021](https://intro2r.com/)   
 + [R for Data Science](https://r4ds.had.co.nz/introduction.html)   
-
-
-
-APGE - Próximo Pasos:  
-========================================================
-
-+ Análisis Automático de Sentencias
-
-poner...... ejemplo anotacion
 
 APGE - Agradecimientos
 ========================================================
