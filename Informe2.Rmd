@@ -1,0 +1,65 @@
+---
+title: "Informe2"
+author: "Área de Planificación Gestión y Estadística"
+date: "13/10/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+# Parámetros globales de RMarkdown
+knitr::opts_chunk$set(echo = F, warning = F, message=FALSE)
+```
+
+```{r}
+# Con qué librerías o herramientas se construirá el documento?
+library(dplyr)
+library(readr)
+library(ggplot2)
+# Con qué datos?
+resultado = read_csv("poderes-judiciales-actos-procesales-no-penales-muestreo.csv")
+# Con qué procesamiento?
+```
+
+## Resumen de Datos
+
+```{r}
+summary(resultado)
+```
+
+## Cantidad de Casos por Provincia
+
+```{r}
+resultado %>% 
+  group_by(provincia_nombre) %>% 
+  summarise(cantidad_movimientos = n())
+```
+
+## Mi primer gráfico automatizado: cantidad x Provincia
+
+```{r, echo=FALSE}
+resultado %>% 
+  group_by(provincia_nombre) %>% 
+  summarise(cantidad_movimientos = n()) %>% 
+  ggplot(aes(x = provincia_nombre, y=cantidad_movimientos)) + 
+  geom_col()
+  
+```
+
+## Mi segundo gráfico automatizado: cantidad po Objeto Litigio
+
+```{r, echo=FALSE}
+resultado %>% 
+  group_by(objeto_litigio_descripcion) %>% 
+  summarise(cantidad = n()) %>% 
+  filter(cantidad > 10) %>% 
+  filter(!is.na(objeto_litigio_descripcion)) %>% 
+  ggplot(aes(x = objeto_litigio_descripcion, y=cantidad)) + 
+  geom_col() +
+  coord_flip() +
+  labs(title = "Cantidad de actos por objeto de litigio") 
+  
+```
+
+
+
+

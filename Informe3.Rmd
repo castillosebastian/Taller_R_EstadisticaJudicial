@@ -1,0 +1,81 @@
+---
+header-includes:
+- \usepackage{pdflscape}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+- \pagenumbering{gobble}
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+geometry: margin=1cm
+params:
+  provincia:
+    label: "Presentar provincia:"
+    input: text
+    value: "Todas"
+  start_date: 
+    label: "Fecha_desde:"
+    input: text
+    value: "2018-02-02"
+  end_date:
+    label: "Fecha_hasta:"
+    input: text
+    value: "2021-04-29"
+---
+```{r setup, include=FALSE}
+source("dependencias.R")
+df = read_csv("poderes-judiciales-actos-procesales-no-penales-muestreo.csv")
+```
+
+```{r parametros, echo=FALSE, include=FALSE}
+#-------------------------PARAMETROS:
+# ------------------------parámetros de poblacion---------------------------
+if (params$provincia == "Todas"){
+  df
+} else {
+  circ <- unlist(str_split(params$provincia, ","))
+  df <- df %>% 
+    filter(provincia_nombre %in% circ)
+  df
+}
+#-------------------------parametros temporales---------------------------
+start_date <- params$start_date
+end_date <- params$end_date
+```
+
+<!-- PROCESAMIENTO ----------------------------------------------------------->
+
+```{r, movimientos_proc, eval = movimientos, message=FALSE, include=FALSE, warning=FALSE, echo=FALSE}
+# Procesamiento
+movimientos_db <- df %>% 
+  filter(acto_procesal_fecha >= start_date, acto_procesal_fecha <= end_date) %>%
+  group_by(provincia_nombre, acto_procesal_fecha) %>% 
+  summarise(cantidad = n()) 
+
+# Gráfico-----------------------------------------------------------------------
+movimientos_g <- movimientos_db %>% 
+  ggplot(aes(x = acto_procesal_fecha, y = cantidad, fill = provincia_nombre)) + 
+  geom_bar(stat="identity") +
+  theme_economist() + 
+  scale_x_date(date_labels  = "%d-%b-%y", date_breaks = "2 week" , expand = c(0,0))  +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 18), axis.text.y = element_text(size = 16), 
+        axis.title.x= element_blank(), axis.title.y = element_blank(), 
+        legend.text = element_text(size=20), legend.position = "top", legend.title = element_blank(), 
+        strip.text = element_text(size=20), plot.title = element_text(size=26, margin=margin(0,0,10,0)), 
+        plot.subtitle = element_text(size = 14, margin=margin(0,0,60,0)), panel.grid = element_blank(), 
+        panel.grid.major.y = element_line(colour = "grey", linetype = "dotted"),
+        plot.margin = unit(c(2,2,2,2), "cm"), plot.caption = element_text(colour = "darkgray", size = 16, hjust = 0,  margin=margin(50,0,0,0))) + 
+  labs(title = "Actos procesales diarios por Provincia (Muestra-http://datos.jus.gob.ar/)")
+
+```
+
+<!-- GRAFICOS --------------------------------------------------------------->
+
+\blandscape
+
+```{r, movimientos_g, eval = movimientos, message=FALSE, warning=FALSE, echo=FALSE, fig.height = 12, fig.width = 18, fig.align = "center"}
+movimientos_g
+```
+
+\elandscape

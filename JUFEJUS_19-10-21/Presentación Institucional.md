@@ -9,17 +9,19 @@ autosize: true
 Presentación
 ========================================================
 
-+ **Primera Parte**: Introducción   
++ **Primera Parte**: Introducción R-Estadística_Judicial   
 + **Segunda Parte**: Trabajo en RMarkdown   
-+ **Objetivo:** Completar la elaboración de un informe automatizado y reproducible de estadística judicial.     
++ **Objetivos:** 
+  1. Dar a conocer atributos del sistema estadístico del STJER
+  2. Completar la elaboración de un informe automatizado y reproducible de estadística judicial.     
 + **materiales_disponibles**: https://github.com/castillosebastian/Taller_R_EstadisticaJudicial.git     
 
 
-APGE - Desafío
+Primera Parte: el desafío del área de estadística
 ========================================================
 
 <table>
-<caption>Estructura Judicial</caption>
+<caption>Estructura Judicial (oct-2021)</caption>
  <thead>
   <tr>
    <th style="text-align:left;"> instancia </th>
@@ -115,21 +117,24 @@ APGE - Desafío
 **Estadística Descriptiva**
 
 - datos_primarios_xmes = 198 * 4 ≈ 792 (ci,carch,resol,audic,mov)
-- procesos = relevamiento, procesesamiento, análisis y producción
+- procesos = relevamiento, procesesamiento, análisis(-) y producción
 
 **Análisis de Datos**
 - datos_primarios: x 
-- procesos = necesidad, [diseño-construccion relevamiento], procesamiento, análisis e informe
+- procesos = necesidad, [diseño-construccion relevamiento], procesamiento, análisis(+) e informe
+- Ej: 
+  * 1 ¿cómo ha evolucionado la actividad judicial durante la pandemia? ([resumen!](https://www.jusentrerios.gov.ar/2021/06/23/en-pandemia-2-millones-de-actos-procesales-y-mas-de-790-mil-presentaciones-digitales/))    
+  * 2 ¿mejora la carga de trabajo reasignar Ejecutivos >$50mil desde juzgados de paz hacia los civiles?
+  * [Narcomenudeo, Violencia, etc.]
 
-APGE - Problema
+
+Problema
 ========================================================
 
-Estadística-1982/2016: 30 años ¿problema resuelto?
+*"Los muertos que vos matáis gozan de buena salud"* (a propósito del trabajo manual con datos -1982/2016?)
 ![](papel_lapiz.jpg)
 
-*"los muertos que vos matáis gozan de buena salud"*
-
-APGE - Una idea simple
+Una idea simple
 ========================================================
 
 Donde hay **dato** debe haber **algoritmo**. 
@@ -140,7 +145,7 @@ Donde hay **dato** debe haber **algoritmo**.
 
 **Automatización**: introducción de agentes (ie. algoritmos) autónomos en situaciones que requieren operaciones recurrentes.    
 
-APGE - Productos/Servicios
+ Productos/Servicios
 ========================================================
 
 <div align="center">
@@ -152,12 +157,14 @@ APGE Sistema de Estadística Pública Judicial del STJER
 
 <img src="JUSTAT_tecnologías.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />
 
+Modelos:
+
 + [INDEC](https://www.indec.gob.ar/).
 + [EUROSTAT](https://ec.europa.eu/eurostat), 2016: Aplicación Modelo Genérico Proc. Estadísticos
 + [R, Official Statistics](https://cran.r-project.org/web/views/OfficialStatistics.html), 2013 +: Publicaciones y Herramientas 
-+ [GREP-JUFEJUS Argentina](http://www.jufejus.org.ar/index.php/2013-04-29-21-18-54/estadisticas), 2010 +: Código de Buenas Prácticas de las Estadísticas Judiciales
++ [GREP-JUFEJUS Argentina](http://www.jufejus.org.ar/index.php/2013-04-29-21-18-54/estadisticas), 2010 +: Código de Buenas Prácticas de las Estadísticas Judiciales. Contra la descalificación del "monos con escopetas" el profesionalismo permanente. 
 
-APGE JUSTAT: arquitectura (pública)
+JUSTAT: arquitectura (pública)
 ========================================================
 
 Aplicaciones:
@@ -173,6 +180,18 @@ Librerías:
 + [Informes](https://bitbucket.org/apgye/apgyeinformes/)
 
 
+Segunda Parte: informes RMarkdown
+========================================================
+
+**¿Qué es RMarkdown?**
+
++ Un subconjunto de tecnologías del ecosistema R orientado a la producción de documentos.
+
++ Documentos que integran información textual y códigos embebido a fin de facilitar la producción 
+de análisis estadísticos. 
+
++ fuente: **https://rmarkdown.rstudio.com/**
+
 Modelo típico de un "análisis de datos"
 ========================================================
 
@@ -182,23 +201,33 @@ Modelo típico de un "análisis de datos"
 
 ["R for Data Science"](https://r4ds.had.co.nz/introduction.html), Wickham-Grolemund.
 
+Informe Automatizado
+========================================================
 
-Bibliografia
+- Informe0 = ejemplo RMarkdown   
+  + Informe1-1 = 2+2, edición texto   
+  + Informe1-2 = 2+2, parametro RM: "echo = F"   
+  + Informe1-3 = variable: "resulado" = 2+2   
+- Informe2 = df: "actos procesales no penales" (Datos Abiertos-MINJUS)
+- Informe3 = Idem(Informe2) + parámetros     
+
+(actualizar github)
+
+Bibliografía
 ========================================================
 
 + [An Introduction to R -Douglas et all, 2021](https://intro2r.com/)   
 + [R for Data Science](https://r4ds.had.co.nz/introduction.html)   
 
-APGE - Agradecimientos
+Gracias!
 ========================================================
-Equipo:   
+
 + Emilce Leones (operador)
 + Marcos Londero (técnico)
-+ Sebastián Castillo (director)
++ Sebastián Castillo (director)    
 
-Gracias
 Área de Planificación Gestión y Estadística    
 Superior Tribunal de Justicia de Entre Ríos    
 0343-4209405/410 – ints. 396 y 305    
-+ apge@jusentrerios.gov.ar  
-+ estadistica@jusentrerios.gov.ar   
+apge@jusentrerios.gov.ar  
+estadistica@jusentrerios.gov.ar   
