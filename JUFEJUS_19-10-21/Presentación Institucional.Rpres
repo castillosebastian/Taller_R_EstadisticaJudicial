@@ -73,9 +73,9 @@ Donde hay **dato** debe haber **algoritmo**.
 
 -------
 
-**[Reproducibilidad](https://cure.web.unc.edu/defining-reproducibility/)**: la capacidad de un cálculo para ser replicado por terceros operando de forma independiente.   (**metodología**)
+**[Reproducibilidad](https://cure.web.unc.edu/defining-reproducibility/)**: la capacidad de un cálculo para ser replicado por terceros operando de forma independiente. Vinculado a nociones de [Ciencia Abierta](https://en.unesco.org/sites/default/files/open_science_brochure_sp.pdf). Concepto de gran alcance en metodología. 
 
-**Automatización**: introducción de agentes (ie. algoritmos) autónomos en situaciones que requieren operaciones recurrentes. (**procesos**)    
+**Automatización**: introducción de agentes (ie. algoritmos) autónomos para realizar tareas recurrentes. Concepto muy amplio y gran alcance en materia de sistemas y proceso.     
 
  Productos/Servicios
 ========================================================
@@ -98,20 +98,21 @@ Modelos:
 + [R, Official Statistics](https://cran.r-project.org/web/views/OfficialStatistics.html), 2013 +: Publicaciones y Herramientas 
 + [GREP-JUFEJUS Argentina](http://www.jufejus.org.ar/index.php/2013-04-29-21-18-54/estadisticas), 2010 +: Código de Buenas Prácticas de las Estadísticas Judiciales. Contra la descalificación del "monos con escopetas" el profesionalismo permanente. 
 
-JUSTAT: arquitectura (pública)
+JUSTAT: arquitectura 
 ========================================================
 
 Aplicaciones:
 
-+ [Tableros](https://justat.jusentrerios.gov.ar/presentaciones/)  
-+ [Presentaciones](https://tablero.jusentrerios.gov.ar/)   
++ [Presentaciones](https://tablero.jusentrerios.gov.ar/) [automatización(-) de entradas]   
++ [Tableros](https://justat.jusentrerios.gov.ar/presentaciones/) [automatización(-) de salidas]  
 
-Librerías: 
+Librerías (públicas): 
 
 + [Operaciones](https://bitbucket.org/apgye/apgyeoperationsjuser/)
 + [Procesamiento](https://bitbucket.org/apgye/apgyeprocesamiento/)
 + [Organización_Institucional](https://bitbucket.org/apgye/apgyejuserorganization/)
-+ [Informes](https://bitbucket.org/apgye/apgyeinformes/)
++ [Informes](https://bitbucket.org/apgye/apgyeinformes/): 
+  - 'Modelo_Parametrizado *a demanda*'[automatización de servicios] 
 
 
 Segunda Parte: informes RMarkdown
@@ -147,6 +148,12 @@ Informe Automatizado
 - nInformes (gratis): https://bitbucket.org/apgye/apgyeinformes/  
 
 (actualizar github)
+
+Análisis Automatizado: en proceso
+========================================================
+
+Análisis de documentos legales: sentencias ([colab](https://github.com/castillosebastian/Taller_R_EstadisticaJudicial/blob/master/NLU_Semantica_Vectorial_en_Textos_Legales.ipynb)) 
+
 
 Bibliografía
 ========================================================
