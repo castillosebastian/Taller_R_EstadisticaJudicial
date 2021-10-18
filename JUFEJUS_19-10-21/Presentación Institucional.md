@@ -141,9 +141,9 @@ Donde hay **dato** debe haber **algoritmo**.
 
 -------
 
-**[Reproducibilidad](https://cure.web.unc.edu/defining-reproducibility/)**: la capacidad de un cálculo para ser replicado por terceros operando de forma independiente.   
+**[Reproducibilidad](https://cure.web.unc.edu/defining-reproducibility/)**: la capacidad de un cálculo para ser replicado por terceros operando de forma independiente.   (**metodología**)
 
-**Automatización**: introducción de agentes (ie. algoritmos) autónomos en situaciones que requieren operaciones recurrentes.    
+**Automatización**: introducción de agentes (ie. algoritmos) autónomos en situaciones que requieren operaciones recurrentes. (**procesos**)    
 
  Productos/Servicios
 ========================================================
@@ -192,7 +192,7 @@ de análisis estadísticos.
 
 + fuente: **https://rmarkdown.rstudio.com/**
 
-Modelo típico de un "análisis de datos"
+Modelo típico de un 'análisis de datos'
 ========================================================
 
 <div>
@@ -209,7 +209,8 @@ Informe Automatizado
   + Informe1-2 = 2+2, parametro RM: "echo = F"   
   + Informe1-3 = variable: "resulado" = 2+2   
 - Informe2 = df: "actos procesales no penales" (Datos Abiertos-MINJUS)
-- Informe3 = Idem(Informe2) + parámetros     
+- Informe3 = Idem(Informe2) + parámetros
+- nInformes (gratis): https://bitbucket.org/apgye/apgyeinformes/  
 
 (actualizar github)
 
