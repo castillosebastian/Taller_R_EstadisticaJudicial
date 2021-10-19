@@ -17,7 +17,7 @@ Presentación
 + **materiales_disponibles**: https://github.com/castillosebastian/Taller_R_EstadisticaJudicial.git     
 
 
-Primera Parte: el desafío del área de estadística
+Desafío para Estadística: Eficacia, Capacidad y Confiabilidad
 ========================================================
 
 <table>
@@ -125,10 +125,11 @@ Primera Parte: el desafío del área de estadística
 - Ej: 
   * 1 ¿cómo ha evolucionado la actividad judicial durante la pandemia? ([resumen!](https://www.jusentrerios.gov.ar/2021/06/23/en-pandemia-2-millones-de-actos-procesales-y-mas-de-790-mil-presentaciones-digitales/))    
   * 2 ¿mejora la carga de trabajo reasignar Ejecutivos >$50mil desde juzgados de paz hacia los civiles?
+  * 3 ¿cómo se adminitra el juicio abreviado?
   * [Narcomenudeo, Violencia, etc.]
 
 
-Problema
+Problema: [dato=>conocimiento] vs  (...datos=>conocimiento=>acción=datos...) 
 ========================================================
 
 *"Los muertos que vos matáis gozan de buena salud"* (a propósito del trabajo manual con datos -1982/2016?)
@@ -162,7 +163,7 @@ Modelos:
 + [INDEC](https://www.indec.gob.ar/).
 + [EUROSTAT](https://ec.europa.eu/eurostat), 2016: Aplicación Modelo Genérico Proc. Estadísticos
 + [R, Official Statistics](https://cran.r-project.org/web/views/OfficialStatistics.html), 2013 +: Publicaciones y Herramientas 
-+ [GREP-JUFEJUS Argentina](http://www.jufejus.org.ar/index.php/2013-04-29-21-18-54/estadisticas), 2010 +: Código de Buenas Prácticas de las Estadísticas Judiciales. Contra la descalificación del "monos con escopetas" el profesionalismo permanente. 
++ [GREP-JUFEJUS Argentina](http://www.jufejus.org.ar/index.php/2013-04-29-21-18-54/estadisticas), 2010 +: Código de Buenas Prácticas de las Estadísticas Judiciales. Contra la descalificación del "monos con escopetas": el profesionalismo permanente. 
 
 JUSTAT: arquitectura 
 ========================================================
@@ -213,13 +214,10 @@ Informe Automatizado
 - Informe3 = Idem(Informe2) + parámetros
 - nInformes (gratis): https://bitbucket.org/apgye/apgyeinformes/  
 
-(actualizar github)
-
 Análisis Automatizado: en proceso
 ========================================================
 
 Análisis de documentos legales: sentencias ([colab](https://github.com/castillosebastian/Taller_R_EstadisticaJudicial/blob/master/NLU_Semantica_Vectorial_en_Textos_Legales.ipynb)) 
-
 
 Bibliografía
 ========================================================
